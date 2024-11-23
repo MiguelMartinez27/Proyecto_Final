@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block content %}<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Usuario</title>
+  </head>
+  <body>
+    <h1>Formulario de Registro</h1>
+
+    {% if mensaje %}
+    <p>{{ mensaje }}</p>
+    {% endif %}
+
+    <form method="POST">
+      {% csrf_token %} {{ form.as_p }}
+      <!-- Muestra el formulario -->
+      <button type="submit">Registrar</button>
+    </form>
+
+    {% if form.errors %}
+    <p>Hubo algunos errores en el formulario. Por favor, revisa los campos.</p>
+    {% endif %}
+  </body>
+</html>
+{% endblock %}
