@@ -2,7 +2,7 @@ databases:
   - name: mi_casita_db
     plan: free
     databaseName: mi_casita_db
-    user: postgres
+    user: admin
 
 services:
   - type: web
