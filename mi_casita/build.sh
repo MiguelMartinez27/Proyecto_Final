@@ -10,3 +10,8 @@ python manage.py collectstatic --no-input
 
 # Apply any outstanding database migrations
 python manage.py migrate
+python manage.py loaddata Inmuebles\fixtures\users.json
+python manage.py loaddata Inmuebles\fixtures\Inmuebles.json
+python manage.py shell
+from Inmuebles.cargar_regiones_y_comunas import cargar_datos
+cargar_datos()
